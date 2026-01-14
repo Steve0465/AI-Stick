@@ -1,0 +1,174 @@
+#!/bin/bash
+# AI_STICK Master Launcher - The ONLY command you need to remember
+
+clear
+echo "╔════════════════════════════════════════════════════════════╗"
+echo "║                    🔥 AI_STICK MENU 🔥                     ║"
+echo "╚════════════════════════════════════════════════════════════╝"
+echo ""
+echo "What do you want to do?"
+echo ""
+echo "  🤖 AI STUFF:"
+echo "     1) Talk to AI (interactive coding)"
+echo "     2) Ask quick question"
+echo "     3) Generate code"
+echo ""
+echo "  🚑 FIX BROKEN LAPTOP:"
+echo "     4) Fix Windows won't boot"
+echo "     5) Fix laptop won't stay on"
+echo ""
+echo "  🔧 SYSTEM:"
+echo "     6) Check if everything works"
+echo "     7) Download rescue tools (one-time setup)"
+echo ""
+echo "  📚 HELP:"
+echo "     8) Show all guides"
+echo "     9) What can AI_STICK do?"
+echo ""
+echo "     0) Exit"
+echo ""
+read -p "Enter number: " choice
+
+case $choice in
+    1)
+        clear
+        echo "🤖 Starting interactive AI coding agent..."
+        echo ""
+        ./coding_agent.py
+        ;;
+    2)
+        clear
+        echo "💬 Quick AI Question"
+        echo ""
+        read -p "What's your question? " question
+        ./quick_ai.py "$question"
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    3)
+        clear
+        echo "📝 AI Code Generator"
+        echo ""
+        read -p "What do you want to build? " desc
+        ./code_writer.py "$desc"
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    4)
+        clear
+        echo "🚑 Windows Boot Repair Guide"
+        echo ""
+        cat windows_rescue/HP_LAPTOP_RESCUE_GUIDE.md | head -100
+        echo ""
+        echo "Full guide: windows_rescue/HP_LAPTOP_RESCUE_GUIDE.md"
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    5)
+        clear
+        echo "🔧 Hardware Power Issue Diagnostic"
+        echo ""
+        python3 windows_rescue/diagnose_power_issue.py
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    6)
+        clear
+        ./check_system.sh
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    7)
+        clear
+        cd windows_rescue
+        ./download_rescue_tools.sh
+        cd ..
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    8)
+        clear
+        echo "📚 Available Guides:"
+        echo ""
+        echo "Main Guides:"
+        ls -1 *.md 2>/dev/null | sed 's/^/  - /'
+        echo ""
+        echo "Windows Rescue:"
+        ls -1 windows_rescue/*.md 2>/dev/null | sed 's/^/  - /'
+        echo ""
+        read -p "Which guide? (type filename): " guide
+        if [ -f "$guide" ]; then
+            less "$guide"
+        elif [ -f "windows_rescue/$guide" ]; then
+            less "windows_rescue/$guide"
+        else
+            echo "File not found: $guide"
+        fi
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    9)
+        clear
+        cat << 'EOF'
+╔════════════════════════════════════════════════════════════╗
+║              WHAT CAN AI_STICK DO?                         ║
+╚════════════════════════════════════════════════════════════╝
+
+🤖 AI ASSISTANT:
+   - Chat with Mistral AI (like ChatGPT but offline)
+   - Write code for you
+   - Answer questions
+   - Analyze files
+   - ALL RUNS LOCALLY - NO INTERNET NEEDED
+
+🚑 COMPUTER REPAIR:
+   - Fix Windows boot issues
+   - Diagnose hardware problems
+   - Boot broken laptops from USB
+   - Backup data before repairs
+   - AI analyzes error logs
+
+🛠️ PORTABLE TOOLKIT:
+   - 1TB of tools and knowledge
+   - Runs on Raspberry Pi 5
+   - Access from iPhone anywhere
+   - Bootable rescue environment
+
+💰 COST: $0/month forever
+   - No subscriptions
+   - No cloud services
+   - Everything runs on your hardware
+
+📱 ACCESS:
+   - iPhone via Terminus app
+   - Mac via Terminal
+   - Direct on Pi
+   - Just type: ./START
+
+🔥 ONE COMMAND TO RULE THEM ALL:
+   ./START  ← That's it. This menu.
+
+EOF
+        echo ""
+        read -p "Press Enter to return to menu..."
+        ./START
+        ;;
+    0)
+        clear
+        echo "👋 Later!"
+        exit 0
+        ;;
+    *)
+        clear
+        echo "❌ Invalid choice. Try again."
+        sleep 2
+        ./START
+        ;;
+esac

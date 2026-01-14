@@ -1,0 +1,60 @@
+╔════════════════════════════════════════════════════════════╗
+║           AI_STICK CHEAT SHEET (TAPE THIS TO LAPTOP)       ║
+╚════════════════════════════════════════════════════════════╝
+
+
+📱 FROM iPHONE (Terminus app):
+   1. Open Terminus
+   2. Connect to: aiserver.local
+   3. Type: cd /media/pi/AI_STICK
+   4. Type: ./START
+
+
+💻 FROM MAC:
+   1. Open Terminal
+   2. Type: ssh pi@aiserver.local
+   3. Type: cd /media/pi/AI_STICK
+   4. Type: ./START
+
+
+🔥 THE ONLY COMMAND YOU NEED:
+
+   ./START
+
+
+That's it. Everything else is in the menu.
+
+
+───────────────────────────────────────────────────────────
+
+
+QUICK REFERENCE:
+
+Talk to AI:           ./START → pick 1
+Ask question:         ./START → pick 2
+Fix Windows boot:     ./START → pick 4
+Fix power issue:      ./START → pick 5
+Check system:         ./START → pick 6
+
+
+───────────────────────────────────────────────────────────
+
+
+FORGOT HOW TO CONNECT?
+
+iPhone:  ssh pi@aiserver.local
+Mac:     ssh pi@aiserver.local
+
+Then:    cd /media/pi/AI_STICK
+Then:    ./START
+
+
+───────────────────────────────────────────────────────────
+
+
+THAT'S LITERALLY ALL YOU NEED TO REMEMBER:
+
+./START
+
+
+───────────────────────────────────────────────────────────

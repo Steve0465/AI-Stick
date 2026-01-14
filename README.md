@@ -23,7 +23,31 @@ AI_STICK is a **portable intelligence system** that gives you:
 
 ---
 
-## 🚀 QUICK START
+## ⚡ SUPER QUICK START (THE EASY WAY)
+
+**Already set up?** Just need the one command?
+
+### From iPhone (Terminus):
+```bash
+ssh pi@aiserver.local
+cd /media/pi/AI_STICK
+./START
+```
+
+### From Mac:
+```bash
+ssh pi@aiserver.local
+cd /media/pi/AI_STICK
+./START
+```
+
+**That's it!** One menu with everything. Pick what you want to do.
+
+**Forgot the commands?** See [CHEAT_SHEET.txt](CHEAT_SHEET.txt) - print it or save to your phone!
+
+---
+
+## 🚀 FIRST TIME SETUP
 
 ### For Raspberry Pi 5 Users
 
@@ -32,14 +56,16 @@ AI_STICK is a **portable intelligence system** that gives you:
 3. **SSH into Pi** from Mac: `ssh pi@aiserver.local`
 4. **Run setup**: `cd /media/pi/AI_STICK && sudo bash setup_pi5.sh`
 5. **Connect from iPhone**: Use Terminus app with Pi's Tailscale IP
+6. **From now on, just type**: `./START`
 
 📖 **Full Guide:** See [PI5_SETUP_GUIDE.md](PI5_SETUP_GUIDE.md)
 📱 **iPhone Guide:** See [IPHONE_QUICK_START.md](IPHONE_QUICK_START.md)
+📱 **iPhone Shortcuts:** See [IPHONE_SHORTCUTS.md](IPHONE_SHORTCUTS.md) - One-tap access!
 
 ### For Mac Users
 
 1. **Plug in AI_STICK**
-2. **Run menu**: `cd /Volumes/AI_STICK && ./start.sh`
+2. **Run menu**: `cd /Volumes/AI_STICK && ./START`
 3. **Choose option** from interactive menu
 
 ---
