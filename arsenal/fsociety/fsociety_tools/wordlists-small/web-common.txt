@@ -1,0 +1,14 @@
+/
+index.html
+index.php
+login
+admin
+assets
+css
+js
+images
+uploads
+api
+server-status
+robots.txt
+sitemap.xml

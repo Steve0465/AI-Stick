@@ -1,0 +1,308 @@
+╔════════════════════════════════════════════════════════════╗
+║            WHAT EACH MENU OPTION DOES                      ║
+╚════════════════════════════════════════════════════════════╝
+
+
+After you type ./START, you get a menu with numbers.
+
+Here's what each one does (in plain English):
+
+
+─────────────────────────────────────────────────────────────
+
+
+🤖 AI STUFF:
+───────────
+
+
+OPTION 1: Talk to AI (interactive coding)
+──────────────────────────────────────────
+
+This is the coolest one.
+
+What it does:
+- Opens a chat with AI (Mistral)
+- You can talk back and forth
+- Ask it to write code
+- Keep improving the code
+- Save it when done
+- Run it to test
+
+Example conversation:
+   You: write a Python script that backs up files
+   AI: [writes code]
+   You: add error handling
+   AI: [improves code]
+   You: save
+   AI: What filename?
+   You: backup.py
+   AI: Saved!
+   You: run
+   AI: [runs your script]
+
+Use this when: You want to build something with AI help
+
+Time: As long as you want - have a full conversation
+
+
+───────────────────────────────────────────────────────────
+
+
+OPTION 2: Ask quick question
+─────────────────────────────
+
+What it does:
+- Asks you to type a question
+- AI answers it (2-3 sentences)
+- Returns to menu
+
+Example:
+   You pick option 2
+   It asks: What's your question?
+   You type: what is Docker?
+   AI explains Docker briefly
+   Back to menu
+
+Use this when: You just need a quick answer
+
+Time: 10-30 seconds
+
+
+───────────────────────────────────────────────────────────
+
+
+OPTION 3: Generate code
+────────────────────────
+
+What it does:
+- Asks what you want to build
+- AI writes the code
+- Shows you the code
+- Asks if you want to save it
+- Done
+
+Example:
+   You pick option 3
+   It asks: What do you want to build?
+   You type: bash script to show disk space
+   AI writes the script
+   Shows it to you
+   Asks: Save as?
+   You type: diskspace.sh
+   Saved!
+
+Use this when: You know exactly what you want, just need code
+
+Time: 30 seconds - 2 minutes
+
+
+─────────────────────────────────────────────────────────────
+
+
+🚑 FIX BROKEN LAPTOP:
+────────────────────
+
+
+OPTION 4: Fix Windows won't boot
+─────────────────────────────────
+
+What it does:
+- Shows guide for "Automatic repair failed" error
+- Has step-by-step instructions
+- Explains how to boot from USB
+- How to analyze error logs with AI
+- How to apply fixes
+
+Use this when:
+- Laptop says "Automatic repair couldn't repair your PC"
+- Windows won't boot
+- Stuck in recovery loop
+- Shows that log file: SRTtrial.txt
+
+What you need:
+- The broken laptop
+- This AI_STICK
+- The instructions that show up
+
+Read: 5_FIX_LAPTOP_WINDOWS.txt for more details
+
+
+───────────────────────────────────────────────────────────
+
+
+OPTION 5: Fix laptop won't stay on
+───────────────────────────────────
+
+What it does:
+- Runs diagnostic questions
+- You answer about symptoms
+- AI figures out what's wrong
+- Tells you how to fix it
+- Estimates repair cost
+
+Use this when:
+- Laptop power button lights up briefly then dies
+- Won't stay powered on
+- Powers off immediately
+- HP 360s convertible issue (your case!)
+
+What you need:
+- Info about what the laptop does
+- Answer the questions honestly
+- Follow the fix instructions
+
+Read: 6_FIX_LAPTOP_POWER.txt for more details
+
+
+─────────────────────────────────────────────────────────────
+
+
+🔧 SYSTEM:
+─────────
+
+
+OPTION 6: Check if everything works
+────────────────────────────────────
+
+What it does:
+- Tests if Ollama (AI) is running
+- Shows what AI models you have
+- Checks Python packages
+- Shows Tailscale status
+- Lists all the tools
+- Tells you what's working and what's not
+
+Use this when:
+- First time setup (make sure it all works)
+- Something seems broken
+- Before using other features
+
+Time: 10 seconds
+
+
+───────────────────────────────────────────────────────────
+
+
+OPTION 7: Download rescue tools (one-time setup)
+─────────────────────────────────────────────────
+
+What it does:
+- Downloads bootable ISOs for laptop repair
+- Gets SystemRescue (best for Windows fixing)
+- Gets Clonezilla (backup tool)
+- Gets GParted (partition tool)
+- Saves them to boot/ folder
+
+Use this when:
+- First time using laptop repair features
+- You need to boot a broken laptop from USB
+- One-time thing (1-2GB download)
+
+Time: 15-30 minutes (big download)
+
+DO THIS ONCE, then you're set forever.
+
+
+─────────────────────────────────────────────────────────────
+
+
+📚 HELP:
+───────
+
+
+OPTION 8: Show all guides
+──────────────────────────
+
+What it does:
+- Lists all the .md guide files
+- You pick which one to read
+- Shows it on screen
+
+Use this when:
+- Want detailed instructions on something
+- Need the full manual
+- THE_BRIEFCASE files aren't enough
+
+
+───────────────────────────────────────────────────────────
+
+
+OPTION 9: What can AI_STICK do?
+────────────────────────────────
+
+What it does:
+- Shows overview of all features
+- Explains what AI_STICK is
+- Lists capabilities
+- Reminds you it's all free and local
+
+Use this when:
+- Forgot what this thing does
+- Want to show someone else
+- Need a reminder of features
+
+
+───────────────────────────────────────────────────────────
+
+
+OPTION 0: Exit
+───────────────
+
+What it does:
+- Closes the menu
+- Returns you to terminal
+
+Use this when:
+- Done using AI_STICK
+- Want to do other terminal stuff
+
+To start menu again: just type ./START
+
+
+─────────────────────────────────────────────────────────────
+
+
+QUICK REFERENCE:
+────────────────
+
+1 = Chat with AI (best for learning/building)
+2 = Quick question (fast answers)
+3 = Generate code (one-shot code creation)
+4 = Fix Windows boot (broken laptop)
+5 = Fix power issue (won't turn on)
+6 = System check (is everything working?)
+7 = Download tools (one-time setup)
+8 = Read guides (detailed docs)
+9 = What is this? (overview)
+0 = Exit
+
+
+─────────────────────────────────────────────────────────────
+
+
+MY RECOMMENDATIONS:
+───────────────────
+
+Start with:
+- Option 6 (check system) - make sure it works
+- Option 1 (talk to AI) - try it out, it's cool!
+- Option 7 (download tools) - if you'll fix laptops
+
+Most useful:
+- Option 1 for building stuff
+- Option 4 & 5 for fixing laptops
+- Option 2 for quick answers
+
+
+─────────────────────────────────────────────────────────────
+
+
+WHAT'S NEXT?
+────────────
+
+Want to fix that Windows laptop?
+
+Read: 5_FIX_LAPTOP_WINDOWS.txt
+
+
+════════════════════════════════════════════════════════════

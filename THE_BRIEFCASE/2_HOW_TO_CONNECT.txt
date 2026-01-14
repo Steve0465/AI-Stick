@@ -1,0 +1,138 @@
+╔════════════════════════════════════════════════════════════╗
+║                    HOW TO CONNECT                          ║
+╚════════════════════════════════════════════════════════════╝
+
+
+WHAT YOU NEED:
+──────────────
+
+✅ Raspberry Pi 5 (already set up)
+✅ AI_STICK plugged into Pi
+✅ Pi turned on and connected to WiFi
+✅ Your iPhone OR your Mac
+
+
+─────────────────────────────────────────────────────────────
+
+
+📱 FROM iPHONE (Easiest Way):
+────────────────────────────
+
+STEP 1: Get Terminus App
+   - Open App Store
+   - Search "Terminus"
+   - Download (it's free)
+   - Open it
+
+STEP 2: Connect to Your Pi
+   - Tap "New Host"
+   - Name: Pi
+   - Address: aiserver.local
+   - Username: pi
+   - Password: (your Pi password)
+   - Save
+
+STEP 3: Connect
+   - Tap "Pi" in the list
+   - You're in!
+   - You'll see: pi@aiserver:~ $
+
+STEP 4: Navigate to AI_STICK
+   Type this exactly:
+
+   cd /media/pi/AI_STICK
+
+   Hit Enter
+
+STEP 5: Start the Menu
+   Type this exactly:
+
+   ./START
+
+   Hit Enter
+
+Done! Menu appears. Pick what you want!
+
+
+─────────────────────────────────────────────────────────────
+
+
+💻 FROM MAC:
+────────────
+
+STEP 1: Open Terminal
+   - Press Command + Space
+   - Type "Terminal"
+   - Hit Enter
+
+STEP 2: Connect to Pi
+   Type this exactly:
+
+   ssh pi@aiserver.local
+
+   Hit Enter
+   It'll ask for password - type your Pi password
+
+STEP 3: Navigate to AI_STICK
+   Type:
+
+   cd /media/pi/AI_STICK
+
+   Hit Enter
+
+STEP 4: Start the Menu
+   Type:
+
+   ./START
+
+   Hit Enter
+
+Done! Menu appears!
+
+
+─────────────────────────────────────────────────────────────
+
+
+🌐 FROM ANYWHERE (If Tailscale is Set Up):
+──────────────────────────────────────────
+
+Same steps as above, but use this address instead:
+
+   ssh pi@100.100.32.58
+
+(Use your Pi's Tailscale IP - might be different)
+
+
+─────────────────────────────────────────────────────────────
+
+
+TROUBLESHOOTING:
+────────────────
+
+"Host not found"
+→ Make sure Pi is turned on
+→ Make sure it's connected to WiFi
+→ Try: ssh pi@raspberrypi.local
+
+"Permission denied"
+→ Wrong password
+→ Try again slowly
+
+"AI_STICK not found"
+→ Make sure USB stick is plugged into Pi
+→ Check if it mounted: ls /media/pi/
+→ You should see AI_STICK in the list
+
+
+─────────────────────────────────────────────────────────────
+
+
+WHAT'S NEXT?
+────────────
+
+Once connected, read:
+
+3_THE_ONE_COMMAND.txt
+
+
+════════════════════════════════════════════════════════════

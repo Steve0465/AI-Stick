@@ -1,0 +1,140 @@
+╔════════════════════════════════════════════════════════════╗
+║                   CHEAT SHEET                              ║
+║          (Print This or Screenshot It!)                    ║
+╚════════════════════════════════════════════════════════════╝
+
+
+THE ONLY COMMAND:
+─────────────────
+
+./START
+
+
+HOW TO CONNECT:
+───────────────
+
+From iPhone (Terminus app):
+   ssh pi@aiserver.local
+   cd /media/pi/AI_STICK
+   ./START
+
+From Mac (Terminal):
+   ssh pi@aiserver.local
+   cd /media/pi/AI_STICK
+   ./START
+
+
+MENU OPTIONS:
+─────────────
+
+1 = Talk to AI (chat/build code)
+2 = Ask quick question
+3 = Generate code
+4 = Fix Windows boot
+5 = Fix power issue
+6 = Check system
+7 = Download tools
+8 = View guides
+9 = Help/info
+0 = Exit
+
+
+FORGOT PASSWORD?
+────────────────
+
+Pi password: (whatever you set when you flashed SD card)
+
+Reset if forgotten:
+   1. Pull SD card from Pi
+   2. Put in Mac
+   3. Google "reset Raspberry Pi password"
+
+
+PI WON'T CONNECT?
+─────────────────
+
+Check:
+✅ Pi is turned on
+✅ Pi is on WiFi
+✅ AI_STICK is plugged in
+✅ Wait 2 minutes after boot
+
+Try:
+   ssh pi@raspberrypi.local
+   OR
+   ssh pi@100.100.32.58  (Tailscale IP)
+
+
+QUICK FIXES:
+────────────
+
+Windows won't boot:
+   1. Plug AI_STICK into laptop
+   2. Boot from USB (press F9)
+   3. Pick SystemRescue
+   4. Terminal: cd /mnt/usb/windows_rescue
+   5. Run: sudo ./ai_rescue.sh /dev/sda
+
+Laptop won't stay on:
+   1. Remove battery
+   2. Unplug AC
+   3. Hold power 60 seconds
+   4. Plug AC only
+   5. Try power on
+
+
+LOCATIONS:
+──────────
+
+On Pi:
+   /media/pi/AI_STICK/
+
+On Mac:
+   /Volumes/AI_STICK/
+
+This briefcase:
+   THE_BRIEFCASE/
+
+
+HELP:
+─────
+
+Stuck? Read: 8_HELP_IM_STUCK.txt
+
+All guides: THE_BRIEFCASE/ folder
+
+
+IMPORTANT NUMBERS:
+──────────────────
+
+Tailscale IP: 100.100.32.58 (your Pi)
+SSH Port: 22
+Ollama Port: 11434
+
+
+ONE-TIME SETUP:
+───────────────
+
+Download rescue tools (for laptop fixing):
+   ./START → 7
+
+This downloads ~700MB, takes 10-20 min
+Do this ONCE, never again
+
+
+THAT'S IT!
+──────────
+
+Just remember: ./START
+
+Everything else is in menus.
+
+
+════════════════════════════════════════════════════════════
+
+
+SAVE THIS OR SCREENSHOT IT!
+Set as your lock screen or print and tape to laptop.
+
+
+════════════════════════════════════════════════════════════

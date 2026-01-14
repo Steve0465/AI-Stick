@@ -1,0 +1,160 @@
+╔════════════════════════════════════════════════════════════╗
+║              THE ONLY COMMAND YOU NEED                     ║
+╚════════════════════════════════════════════════════════════╝
+
+
+FORGET EVERYTHING ELSE.
+
+THIS IS THE ONLY THING YOU NEED TO REMEMBER:
+
+
+     ./START
+
+
+That's it. Type those 7 characters. Hit Enter.
+
+
+─────────────────────────────────────────────────────────────
+
+
+WHEN TO USE IT:
+───────────────
+
+Every single time you want to use AI_STICK.
+
+That's literally all you do.
+
+
+HOW TO TYPE IT:
+───────────────
+
+After you connect (see file 2_HOW_TO_CONNECT.txt):
+
+You'll see this:
+
+   pi@aiserver:/media/pi/AI_STICK $
+
+Now type:
+
+   ./START
+
+Hit Enter.
+
+
+WHAT HAPPENS:
+─────────────
+
+A menu appears:
+
+╔════════════════════════════════════════════════════════════╗
+║                    🔥 AI_STICK MENU 🔥                     ║
+╚════════════════════════════════════════════════════════════╝
+
+What do you want to do?
+
+  🤖 AI STUFF:
+     1) Talk to AI (interactive coding)
+     2) Ask quick question
+     3) Generate code
+
+  🚑 FIX BROKEN LAPTOP:
+     4) Fix Windows won't boot
+     5) Fix laptop won't stay on
+
+  🔧 SYSTEM:
+     6) Check if everything works
+     7) Download rescue tools (one-time setup)
+
+  📚 HELP:
+     8) Show all guides
+     9) What can AI_STICK do?
+
+     0) Exit
+
+Enter number:
+
+
+NOW WHAT?
+─────────
+
+Just type a number.
+
+Want to talk to AI? Type 1 and hit Enter.
+Need to fix Windows? Type 4 and hit Enter.
+Not sure what something does? Type 9 for help.
+
+That's it.
+
+
+─────────────────────────────────────────────────────────────
+
+
+EXAMPLE FULL SESSION:
+─────────────────────
+
+1. Connect to Pi (from iPhone or Mac)
+
+   ssh pi@aiserver.local
+
+2. Navigate to AI_STICK
+
+   cd /media/pi/AI_STICK
+
+3. Start menu
+
+   ./START
+
+4. Pick what you want (type a number)
+
+   1
+
+5. Use it
+
+6. When done, type 0 to exit
+
+7. To start again, just type: ./START
+
+
+─────────────────────────────────────────────────────────────
+
+
+CAN'T REMEMBER EVEN THAT?
+──────────────────────────
+
+Take a screenshot of this file.
+Save to your phone.
+Look at it when needed.
+
+Or print file: 7_CHEAT_SHEET.txt
+Tape it to your laptop.
+
+
+─────────────────────────────────────────────────────────────
+
+
+SERIOUSLY, THAT'S IT:
+─────────────────────
+
+./START
+
+Everything else is just picking numbers from menus.
+
+No memorizing file paths.
+No remembering script names.
+No typing complicated commands.
+
+Just: ./START
+
+
+─────────────────────────────────────────────────────────────
+
+
+WHAT'S NEXT?
+────────────
+
+Want to know what each menu option does?
+
+Read: 4_MENU_GUIDE.txt
+
+
+════════════════════════════════════════════════════════════

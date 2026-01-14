@@ -1,0 +1,13 @@
+www
+mail
+smtp
+pop
+imap
+ftp
+api
+dev
+stage
+test
+portal
+admin
+vpn

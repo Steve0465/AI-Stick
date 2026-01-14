@@ -1,0 +1,355 @@
+╔════════════════════════════════════════════════════════════╗
+║                  HELP - I'M STUCK!                         ║
+╚════════════════════════════════════════════════════════════╝
+
+
+Common problems and how to fix them:
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Can't connect to Pi
+─────────────────────────────
+
+Error: "Host not found" or "Connection refused"
+
+FIX #1: Check Pi is on
+   - Look at Pi - lights on?
+   - Wait 2 minutes after plugging in power
+   - Try again
+
+FIX #2: Check Pi is on WiFi
+   - Does Pi have ethernet cable? Good.
+   - Or is WiFi configured? Check when you flashed SD
+
+FIX #3: Try different address
+   Instead of: ssh pi@aiserver.local
+   Try: ssh pi@raspberrypi.local
+   Or: ssh pi@192.168.1.XXX (find IP in your router)
+
+FIX #4: Use Tailscale IP
+   ssh pi@100.100.32.58
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Wrong password
+────────────────────────
+
+Error: "Permission denied"
+
+FIX #1: Try again slowly
+   - Type password carefully
+   - You won't see characters as you type (normal!)
+
+FIX #2: Use correct password
+   - Password is what you set when flashing SD card
+   - Default is often: raspberry
+   - Or: pi
+
+FIX #3: Reset password
+   1. Pull SD card from Pi
+   2. Put in Mac
+   3. Google: "reset raspberry pi password"
+   4. Follow guide
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: AI_STICK not found
+────────────────────────────
+
+Error: "No such file or directory"
+
+FIX #1: Check it's plugged in
+   - Is USB stick in Pi's USB port?
+   - Try different port (use blue USB 3.0 ports)
+
+FIX #2: Check if mounted
+   Type: ls /media/pi/
+   You should see: AI_STICK
+
+   If not there:
+   sudo mount /dev/sda1 /media/pi/AI_STICK
+
+FIX #3: Check disk name
+   Type: lsblk
+   Look for your 1TB drive
+   Might be sda1, sdb1, or similar
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: ./START doesn't work
+──────────────────────────────
+
+Error: "Permission denied" or "command not found"
+
+FIX #1: Make it executable
+   chmod +x START
+   Then try: ./START
+
+FIX #2: Check you're in right folder
+   Type: pwd
+   Should show: /media/pi/AI_STICK
+
+   If not:
+   cd /media/pi/AI_STICK
+
+FIX #3: Run with bash
+   bash START
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Ollama not running
+────────────────────────────
+
+Error: "Cannot connect to Ollama"
+
+FIX #1: Start Ollama
+   sudo systemctl start ollama
+
+FIX #2: Check status
+   sudo systemctl status ollama
+   Should say "active (running)"
+
+FIX #3: Install Ollama (if missing)
+   cd /media/pi/AI_STICK
+   sudo bash setup_pi5.sh
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: AI is slow or not responding
+──────────────────────────────────────
+
+FIX #1: Wait longer
+   - Pi 5 isn't super fast
+   - First response takes 10-20 seconds
+   - Be patient
+
+FIX #2: Use smaller model
+   - Edit scripts to use "tinyllama" instead of "mistral"
+   - Much faster but less smart
+
+FIX #3: Check Pi isn't overheating
+   - Feel if Pi is hot
+   - Make sure fan is working
+   - Give it ventilation
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Python errors
+───────────────────────
+
+Error: "Module not found" or "ImportError"
+
+FIX: Install packages
+   sudo apt update
+   sudo apt install python3-requests python3-tqdm
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Can't boot laptop from USB
+────────────────────────────────────
+
+FIX #1: Access boot menu
+   - Turn on laptop
+   - IMMEDIATELY press:
+     * F9 (HP)
+     * F12 (Dell)
+     * F2 (Lenovo)
+     * Esc then F9 (some HPs)
+   - Keep pressing until menu appears
+
+FIX #2: Disable Secure Boot
+   - Enter BIOS (F10 or F2)
+   - Find "Security" tab
+   - Disable "Secure Boot"
+   - Save and exit
+   - Try boot menu again
+
+FIX #3: Enable Legacy Boot
+   - In BIOS
+   - Find "Boot" tab
+   - Enable "Legacy Boot" or "CSM"
+   - Or set to "UEFI and Legacy"
+   - Save and exit
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Rescue ISO not showing in Ventoy
+──────────────────────────────────────────
+
+FIX #1: Check it downloaded
+   ls /Volumes/AI_STICK/boot/
+   Should see: systemrescue.iso
+
+FIX #2: Re-download
+   ./START → 7
+   Download again
+
+FIX #3: Put in right folder
+   ISOs must be in: boot/ folder
+   Not in boot/ventoy/ or anywhere else
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Tailscale won't connect
+─────────────────────────────────
+
+FIX #1: Start Tailscale
+   sudo tailscale up
+
+FIX #2: Check status
+   sudo tailscale status
+   Should show list of devices
+
+FIX #3: Reinstall
+   cd /media/pi/AI_STICK
+   curl -fsSL https://tailscale.com/install.sh | sh
+   sudo tailscale up
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Terminus app won't connect
+────────────────────────────────────
+
+FIX #1: Check Pi address
+   - Make sure using: aiserver.local
+   - Or Tailscale IP: 100.100.32.58
+
+FIX #2: Check port
+   - Should be: 22
+   - Not 2222 or anything else
+
+FIX #3: Check saved password
+   - Delete the connection
+   - Add new one
+   - Type password carefully
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Menu options do nothing
+─────────────────────────────────
+
+FIX #1: Check you pressed Enter
+   - Type number
+   - Press Enter/Return
+   - Wait for response
+
+FIX #2: Try different option
+   - Option 6 is simplest to test
+   - Should show system status immediately
+
+FIX #3: Restart menu
+   - Press Ctrl+C to cancel
+   - Type: ./START
+   - Try again
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Downloaded ISOs but laptop still broken
+─────────────────────────────────────────────────
+
+You downloaded the tools but didn't boot from them!
+
+Steps:
+1. Plug AI_STICK into BROKEN laptop (not Pi!)
+2. Turn on broken laptop
+3. Press F9 (or F12, F2) to enter boot menu
+4. Select USB boot
+5. Ventoy menu appears
+6. Pick SystemRescue
+7. THEN run the fix scripts
+
+
+─────────────────────────────────────────────────────────────
+
+
+PROBLEM: Nothing works, totally stuck
+──────────────────────────────────────
+
+NUCLEAR OPTION: Start over
+
+1. From Mac:
+   cd /Volumes/AI_STICK
+   sudo bash setup_pi5.sh
+
+2. This re-runs full setup
+3. Takes 15 minutes
+4. Fixes most issues
+
+OR
+
+Ask me! SSH into Pi and type:
+   ./START → 2 → "How do I fix [your problem]"
+
+The AI can help troubleshoot!
+
+
+─────────────────────────────────────────────────────────────
+
+
+STILL STUCK?
+────────────
+
+Check if files exist:
+
+   cd /media/pi/AI_STICK
+   ls -la
+
+Should see:
+   - START (the menu)
+   - THE_BRIEFCASE (folder)
+   - coding_agent.py
+   - quick_ai.py
+   - windows_rescue (folder)
+   - Lots of other files
+
+If files are missing:
+   - AI_STICK might be corrupted
+   - Try on different computer
+   - Might need to rebuild it
+
+
+─────────────────────────────────────────────────────────────
+
+
+REMEMBER:
+─────────
+
+Most problems are:
+1. Not in right directory (cd /media/pi/AI_STICK)
+2. File not executable (chmod +x filename)
+3. Service not running (sudo systemctl start ollama)
+4. Wrong path/address
+
+90% of issues are fixed by:
+- Checking you're in /media/pi/AI_STICK
+- Running ./START from there
+- Being patient (Pi is slow sometimes)
+
+
+════════════════════════════════════════════════════════════

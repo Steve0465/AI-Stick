@@ -1,0 +1,35 @@
+{
+  "env": true,
+  "jobs": [
+    {
+      "tool": "gobuster",
+      "target": "https://example.com",
+      "options": {
+        "mode": "dir",
+        "wordlist": "~/Desktop/fsociety_tools/SecLists/Discovery/Web-Content/common.txt"
+      }
+    },
+    {
+      "tool": "gobuster",
+      "target": "example.com",
+      "options": {
+        "mode": "dns",
+        "wordlist": "~/Desktop/fsociety_tools/SecLists/Discovery/DNS/namelist.txt"
+      }
+    },
+    {
+      "tool": "wpscan",
+      "target": "https://example.com",
+      "options": {
+        "api_token": "YOUR_TOKEN_IF_ANY"
+      }
+    },
+    {
+      "tool": "sqlmap",
+      "target": "https://example.com/item.php?id=1",
+      "options": {
+        "flags": "--batch --risk=1 --level=2"
+      }
+    }
+  ]
+}
