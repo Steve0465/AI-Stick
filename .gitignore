@@ -1,0 +1,67 @@
+# AI_STICK .gitignore
+# System files - macOS
+.DS_Store
+._*
+.Spotlight-V100
+.fseventsd
+.Trashes
+.TemporaryItems
+
+# System files - Windows
+$RECYCLE.BIN/
+System Volume Information/
+Thumbs.db
+desktop.ini
+
+# Large knowledge files (too big for git)
+*.zim
+*.iso
+*.img
+*.dmg
+*.ova
+*.vmdk
+*.vdi
+
+# Archives (should be documented, not stored)
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# AI Model files (huge!)
+models/*.gguf
+models/*.bin
+*.gguf
+*.bin
+
+# Sensitive files
+*.key
+*.pem
+*.p12
+credentials.json
+.env
+*.password
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+
+# Large downloads
+downloads/*.iso
+downloads/*.img

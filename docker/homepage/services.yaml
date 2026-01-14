@@ -1,0 +1,70 @@
+---
+# AI Stick Dashboard Configuration
+
+title: AI Stick
+icon: mdi-flash-circle
+
+settings:
+  headerStyle: clean
+  layout:
+    - AI Services:
+        style: row
+        columns: 2
+    - Automation:
+        style: row
+        columns: 2
+    - Quick Links:
+        style: row
+        columns: 3
+
+widgets:
+  - resources:
+      cpu: true
+      memory: true
+      disk: /
+  - datetime:
+      format:
+        dateStyle: short
+        timeStyle: short
+
+services:
+  - AI Services:
+      - Open WebUI:
+          icon: mdi-robot
+          href: http://localhost:3000
+          description: Chat with local LLMs
+          widget:
+            type: customapi
+            url: http://ollama:11434/api/tags
+            mappings:
+              - field: models
+                label: Models
+                format: size
+      - Ollama API:
+          icon: mdi-brain
+          href: http://localhost:11434
+          description: LLM inference engine
+
+  - Automation:
+      - n8n:
+          icon: mdi-workflow
+          href: http://localhost:5678
+          description: Visual automation workflows
+      - Results:
+          icon: mdi-folder-search
+          href: file:///results
+          description: Scan outputs & reports
+
+  - Quick Links:
+      - HackTheBox:
+          icon: mdi-cube-outline
+          href: https://hackthebox.com
+          description: Practice legally
+      - TryHackMe:
+          icon: mdi-school
+          href: https://tryhackme.com
+          description: Learn hacking
+      - ExplainShell:
+          icon: mdi-console
+          href: https://explainshell.com
+          description: Understand commands
